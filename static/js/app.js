@@ -43,23 +43,23 @@ d3.json("samples.json").then(function init(data){
     
       Plotly.newPlot("bar", data, layout);
 
-      var trace2 = {
-        x: sliced_labels,
-        y: reversedData,
-        mode: 'markers',
-        // marker: {
-        //   size: [reversedData.min, reversedData.max]
-        // }
-      };
-      
-      var data2 = [trace2];
-      
-      var layout2 = {
-        title: 'Marker Size',
-        showlegend: false,
-        height: 900,
-        width: 900
-      };
+    var trace2 = {
+    x: sliced_labels,
+    y: reversedData,
+    mode: 'markers',
+    // marker: {
+    //   size: [reversedData.min, reversedData.max]
+    // }
+    };
+    
+    var data2 = [trace2];
+    
+    var layout2 = {
+    title: 'Marker Size',
+    showlegend: false,
+    height: 900,
+    width: 900
+    };
       
       Plotly.newPlot('bubble', data2, layout2);
 
@@ -140,6 +140,24 @@ function optionChanged(selectedData){
             };
             
               Plotly.newPlot("bar", data, layout);
+            
+            var trace2 = {
+            x: new_x,
+            y: sliced_labels,
+            mode: 'markers',
+            
+            };
+            
+            var data2 = [trace2];
+            
+            var layout2 = {
+            title: 'Marker Size',
+            showlegend: false,
+            height: 900,
+            width: 900
+            };
+                
+                Plotly.newPlot('bubble', data2, layout2);
 
     };
     // updatePlotly(x,y);    
